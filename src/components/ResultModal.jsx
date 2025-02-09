@@ -7,7 +7,7 @@ function ResultModal({ ref, targetTime, timeRemaining, handelReset }) {
   const userLost = timeRemaining <= 0;
   const formattedTime = (timeRemaining / 1000).toFixed(2);
 
-  const score = Math.round(1 - timeRemaining / (targetTime * 1000));
+  let score = (1 - timeRemaining / (targetTime * 1000)).toFixed(2);
 
   useImperativeHandle(ref, () => {
     return {
